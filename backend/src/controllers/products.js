@@ -1,5 +1,5 @@
 //array de metodos
-const productsSchema = {};
+const productsController = {};
 
 //import el schema de la coleccion q vamos a utilizar
 import productsModel from "../models/products.js";
@@ -37,6 +37,7 @@ productsController.updateProducts = async (req, res) => {
         price, 
         stock,
     }, {new:true});
+    res.json({message: "product updated"})
 };
 
 export default productsController;

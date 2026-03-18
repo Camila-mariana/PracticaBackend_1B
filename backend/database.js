@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, {connect} from "mongoose";
 
 mongoose.connect("mongodb://localhost:27017/megapacaDB")
 

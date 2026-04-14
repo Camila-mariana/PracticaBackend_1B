@@ -77,4 +77,4 @@ customersController.deleteCustomer = async (req, res) => {
   }
 };
 
-export default cu
+export default customersController;

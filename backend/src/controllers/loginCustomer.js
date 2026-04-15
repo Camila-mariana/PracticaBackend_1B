@@ -43,6 +43,10 @@ loginCustomer.login = async (req, res) => {
             await customerFound.save();
             return res.status(403).json ({message:"Cuenta bloqueada por intetos fallidos"})  
         }
+
+        await customerFound.save();
+
+        return res.status(401).json({message: "Contraseña incorrecta"})
     }
 
     //Resetear intentos si login correcto

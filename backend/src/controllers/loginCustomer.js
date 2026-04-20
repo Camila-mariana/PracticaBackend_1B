@@ -1,10 +1,9 @@
 import customerModel from "../models/customers.js";
 
 import bcrypt from "bcryptjs";
-import jsonwebtoken from "jsonwebtoken";
-
+import jsonwebtoken from "jsonwebtoken"; 
 import { config } from "../../config.js";
-import customerController from "./customers.js";
+import Customer from "./customers.js";
 
 //Array
 const loginCustomer = {};
@@ -56,10 +55,10 @@ loginCustomer.login = async (req, res) => {
     //Generar el token 
     const token = jsonwebtoken.sign(
         //#1- Que datos vamos a guardar
-        {id: customerFound._id, userType: "Customer"},
+        {id: customerFound._id, userType: "Customer"}, //tipo de usuario 
         //#2-secret key
         config.jwt.secret,
-        //3- cuando expira
+        //3- cuando expira 
         {expiresIn: "30d"}
     );
 

@@ -12,6 +12,7 @@ import loginCustomer from "./src/routes/loginRoutes.js";
 import logout from "./src/routes/logout.js";
 import cors from "cors";
 import recoveryPassword from "./src/routes/recoveryPassword.js";
+import providers from "./src/routes/providers.js";
 
 //Constante que guarda express
 const app = express();
@@ -38,5 +39,6 @@ app.use("/api/registerAdmin", registerAdmin);
 app.use("/api/login", loginCustomer);
 app.use("/api/logout", logout);
 app.use("/api/recoveryPassword", recoveryPassword);
+app.use("/api/providers", providers);
 
 export default app;

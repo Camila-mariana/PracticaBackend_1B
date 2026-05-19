@@ -13,6 +13,7 @@ import logout from "./src/routes/logout.js";
 import cors from "cors";
 import recoveryPassword from "./src/routes/recoveryPassword.js";
 import providers from "./src/routes/providers.js";
+import limiter from "./src/middlewares/limiter.js";
 
 //Constante que guarda express
 const app = express();
@@ -25,6 +26,7 @@ app.use(
   }),
 );
 
+app.use(limiter);
 //Aceptar json
 app.use(express.json());
 app.use(cookieParser());

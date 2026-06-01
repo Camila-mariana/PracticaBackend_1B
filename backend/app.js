@@ -16,6 +16,7 @@ import providers from "./src/routes/providers.js";
 import limiter from "./src/middlewares/limiter.js";
 import cart from "./src/routes/cart.js";
 import wompiRoutes from "./src/routes/wompi.js" 
+import deliveryDrivers from "./src/routes/deliveryDrivers.js";
 
 //Constante que guarda express
 const app = express();
@@ -46,6 +47,6 @@ app.use("/api/recoveryPassword", recoveryPassword);
 app.use("/api/providers", providers);
 app.use("/api/cart", cart);
 app.use("/api/wompi", wompiRoutes);
-app.use("/api/deliveryDrivers", )
+app.use("/api/deliveryDrivers", deliveryDrivers);
 
 export default app;

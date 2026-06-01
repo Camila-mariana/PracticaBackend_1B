@@ -14,6 +14,8 @@ import cors from "cors";
 import recoveryPassword from "./src/routes/recoveryPassword.js";
 import providers from "./src/routes/providers.js";
 import limiter from "./src/middlewares/limiter.js";
+import cart from "./src/routes/cart.js";
+import wompiRoutes from "./src/routes/wompi.js" 
 
 //Constante que guarda express
 const app = express();
@@ -42,5 +44,8 @@ app.use("/api/login", loginCustomer);
 app.use("/api/logout", logout);
 app.use("/api/recoveryPassword", recoveryPassword);
 app.use("/api/providers", providers);
+app.use("/api/cart", cart);
+app.use("/api/wompi", wompiRoutes);
+app.use("/api/deliveryDrivers", )
 
 export default app;

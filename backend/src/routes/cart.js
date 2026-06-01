@@ -1,5 +1,5 @@
 import express from "express"
-import cartController from "../controllers/cartController.js"
+import cartController from "../controllers/cart.js"
  
 const router = express.Router()
  
@@ -12,5 +12,5 @@ router.route("/:id")
 .delete(cartController.daleteCart)
 .get(cartController.getCartById)
  
-export default router; a
+export default router; 
  

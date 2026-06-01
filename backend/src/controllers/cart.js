@@ -26,7 +26,7 @@ cartController.getCartById = async (req, res) => {
             return res.status(404).json({message: "cart not found"})
         }
  
-        return res.status(200).json(carts)
+        return res.status(200).json(cart)
     } catch (error) {
         console.log("error" + error);
         return res.status(500).json({ message: "Internal server error" });

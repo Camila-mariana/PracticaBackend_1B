@@ -1,5 +1,5 @@
 import express from "express";
-import deliveryDriversController from "../controllers/deliveryDrivers";
+import deliveryDriversController from "../controllers/deliveryDrivers.js";
 import updated from "../utils/cloudinaryConfig.js";
 
 const router = express.Router();

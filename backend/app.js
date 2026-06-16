@@ -18,6 +18,7 @@ import cart from "./src/routes/cart.js";
 import wompiRoutes from "./src/routes/wompi.js" 
 import deliveryDrivers from "./src/routes/deliveryDrivers.js";
 import { validateAuthCookie } from "./src/middlewares/authMiddleware.js";
+import loginAdmin from "./src/routes/loginAdmin.js";
 
 
 //Constante que guarda express
@@ -43,7 +44,8 @@ app.use("/api/clients", customersRoutes);
 app.use("/api/registerCustomers", registerCustomer);
 app.use("/api/registerEmployee", registerEmployee);
 app.use("/api/registerAdmin", registerAdmin);
-app.use("/api/login", loginCustomer);
+app.use("/api/loginCustomer", loginCustomer);
+app.use("/api/loginAdmin", loginAdmin);
 app.use("/api/logout", logout);
 app.use("/api/recoveryPassword", recoveryPassword);
 app.use("/api/providers", providers);

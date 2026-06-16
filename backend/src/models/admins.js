@@ -1,22 +1,31 @@
-import { Schema, model } from 'mongoose';
-const schema = new Schema({
+import { Schema, model } from "mongoose";
+const schema = new Schema(
+  {
     name: {
-        type: String
+      type: String,
     },
     lastname: {
-        type: String
+      type: String,
     },
     email: {
-        type: String
+      type: String,
     },
     password: {
-        type: String
+      type: String,
     },
     isVerified: {
-        type: Boolean
-    }
-}, {
+      type: Boolean,
+    },
+    LoginAttempts: {
+      type: Number,
+    },
+    timeOut: {
+      type: Date,
+    },
+  },
+  {
     timestamps: true,
-    strict: false
-});
-export default model('admins', schema);
+    strict: false,
+  },
+);
+export default model("admins", schema);

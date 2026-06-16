@@ -17,6 +17,8 @@ import limiter from "./src/middlewares/limiter.js";
 import cart from "./src/routes/cart.js";
 import wompiRoutes from "./src/routes/wompi.js" 
 import deliveryDrivers from "./src/routes/deliveryDrivers.js";
+import { validateAuthCookie } from "./src/middlewares/authMiddleware.js";
+
 
 //Constante que guarda express
 const app = express();
@@ -35,7 +37,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/api/products", productsRoutes);
 app.use("/api/branches", branchesRoutes);
-app.use("/api/employees", employeesRoutes);
+app.use("/api/employees", validateAuthCookie(["admin"]), employeesRoutes);
 app.use("/api/reviews", reviewsRoutes);
 app.use("/api/clients", customersRoutes);
 app.use("/api/registerCustomers", registerCustomer);

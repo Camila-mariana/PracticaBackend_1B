@@ -1,9 +1,7 @@
 import customerModel from "../models/customers.js";
-
 import bcrypt from "bcryptjs";
 import jsonwebtoken from "jsonwebtoken"; 
 import { config } from "../../config.js";
-import Customer from "./customers.js";
 
 //Array
 const loginCustomer = {};

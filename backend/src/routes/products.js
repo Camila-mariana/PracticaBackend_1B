@@ -4,26 +4,26 @@ import { validateAuthCookie } from "../middlewares/authMiddleware.js";
 
 //Router() para colocar los metodos q tendra el endpoint
 const router = express.Router();
-router
-  .route("/")
-  .get(
-    validateAuthCookie(["Customer", "Admin"]),
-    productsController.getProducts,
-  )
-  .post(validateAuthCookie(["Admin"]), productsController.insertProducts);
+router.route("/")
+.get(validateAuthCookie(["Customer", "Admin"]), productsController.getProducts)
+.post(validateAuthCookie(["Admin"]),productsController.insertProducts)
 
-router.route("/low-stock").get(productsController.getLowStock);
 
-router.route("/price-range").post(productsController.getProductsByPriceRange);
+router.route("/low-stock")
+.get(productsController.getLowStock)
 
-router.route("/count").get(productsController.countProducts);
+router.route("/price-range")
+.post(productsController.getProductsByPriceRange)
 
-router.route("/search-name").post(productsController.searchByName);
+router.route("/count")
+.get(productsController.countProducts)
 
-router
-  .route("/:id")
-  .put(productsController.updateProducts)
-  .delete(productsController.deleteProducts)
-  .get(productsController.getProductsById);
+router.route("/search-name")
+.post(productsController.searchByName)
+
+router.route("/:id")
+.put(productsController.updateProducts)
+.delete(productsController.deleteProducts)
+.get(productsController.getProductsById)
 
 export default router;
